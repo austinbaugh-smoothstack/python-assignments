@@ -121,3 +121,35 @@ class Object:
 obj = Object()
 obj.getString("some sting")
 obj.printString()
+
+def crowd_test(crowd):
+    if len(names) > 3:
+        print("3 is a crowd")
+
+print("Three is a Crowd:")
+names = [ "Bob", "Alice", "Onizuka", "Bowser" ]
+crowd_test(names)
+names.remove("Onizuka")
+names.remove("Bowser")
+crowd_test(names)
+
+print("Three is a Crowd - Part 2:")
+def crowd_test(crowd):
+    if len(names) > 3:
+        print("3 is a crowd")
+    else:
+        print("the room is not very crowded")
+crowd_test(names)
+
+print("Six is a Mob:")
+names = [ "Bob", "Alice", "Onizuka", "Bowser", "Iris", "Ed" ]
+def crowd_test(crowd):
+    if len(names) > 5:
+        print("mob in the room")
+    elif len(names) > 2:
+        print("3 is a crowd")
+    elif len(names) > 0:
+        print("the room is not very crowded")
+    else:
+        print("the room is empty")
+crowd_test(names)
