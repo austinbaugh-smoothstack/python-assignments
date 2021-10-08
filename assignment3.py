@@ -1,5 +1,4 @@
 #!/bin/python3
-"""
 import random
 
 print("1)")
@@ -62,7 +61,6 @@ list = [
 for item in list:
     print("Value: " + str(item))
     print("Type: " + str(type(item)))
-"""
 
 print("9)")
 nums = []
