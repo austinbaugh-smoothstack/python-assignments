@@ -31,13 +31,26 @@ def main():
     for row in range(2, 14):
         row_date = sheet1.cell(row,column=1).value
         if row_date.strftime("%B") == month and row_date.year == year:
-            for col in range(2, 6):
+            for col in range(2, 7):
                 label = sheet1.cell(row=1, column=col).value
                 value = sheet1.cell(row, column=col).value
-                logging.info(label + " : " + str(value))
+                logging.info(label + " : " + str(value * 100) + "%")
             break
-    # TODO Read sheet 2
+    # Read sheet 2
     sheet2 = wb["VOC Rolling MoM"]
+    col = 2
+    while True:
+        col_date = sheet2.cell(row=1,column=col).value
+        if col_date.strftime("%B") == month and col_date.year == year:
+            for row in range(3, 19):
+                label = sheet2.cell(row, column=1).value
+                value = sheet2.cell(row, column=col).value
+                if label == None:
+                    continue
+                logging.info(label + " : " + str(value * 100) + "%")
+            break
+        col += 1
+
 
 if __name__ == "__main__":
     main()
